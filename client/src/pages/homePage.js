@@ -7,6 +7,8 @@ import { ProductTable } from "./TablePages/ProductPage";
 import { EventTable } from "./TablePages/EventPage";
 import { FacilityTable } from "./TablePages/FacilityPage";
 import { ArtistTable } from "./TablePages/ArtistPage";
+import ImageSlider from '../components/ImageSlider'; // Import your image slider component
+
 
 function HomePage() {
   // eslint-disable-next-line
@@ -20,11 +22,15 @@ function HomePage() {
   }, []);
 
 
-  
+  // Extract image URLs from the summary array
+  // const imageUrls = summary.flatMap(data => data.path);
 
   return (
     <>
       <div className="container m-auto my-2 ">
+      {/* <div>
+        <ImageSlider images={imageUrls} />
+      </div> */}
        
        {/* Manage Artist*/}
        <div className="my-4">

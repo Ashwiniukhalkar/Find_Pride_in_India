@@ -8,6 +8,8 @@ import { fetchSummary } from "../services/domCRUD";
 
 import {ChartPlaceAdmin} from "../components/Charts/ChartPlaceAdmin";
 import { Chart } from '../components/Charts/Chart';
+import ImageSlider from '../components/ImageSlider'; // Import your image slider component
+
 
 export const ProfilePage = () => {
     const [summary, setSummary] = useState([]);
@@ -41,10 +43,17 @@ export const ProfilePage = () => {
           console.error('Error fetching summary:', error);
         }
       };
+
+      // Extract image URLs from the summary array
+  const imageUrls = summary.flatMap(data => data.path);
   return (
     <div>
 
-   
+    {/* Image Slider */}
+    <div className='w-full h-96'>
+        <ImageSlider images={imageUrls} />
+    </div>
+
      {/* About Place */}
      {summary.map((data, index) => (
 
